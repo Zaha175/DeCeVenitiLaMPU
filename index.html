@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Alcool</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            color: darkblue;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #intrebare {
+            background-color: darkblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #intrebare:hover {
+            opacity: 0.8;
+        }
+
+        .raspuns-container {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding: 0; /* Elimină padding-ul implicit al listei */
+        }
+
+        li {
+            margin-bottom: 15px; /* Mărește spațiul dintre elementele listei */
+            line-height: 1.5; /* Mărește spațiul dintre rânduri */
+        }
+
+        /* Stil pentru titlurile din interiorul listei */
+        ul li b {
+            color: darkblue; /* Culoarea albastru pentru titluri */
+            display: block; /* Face titlurile să ocupe toată lățimea */
+            margin-bottom: 5px; /* Adaugă spațiu sub titluri */
+        }
+
+        /* Stil pentru sub-liste */
+        ul li ul {
+            margin-top: 5px; /* Spațiu deasupra sub-listei */
+            margin-bottom: 10px; /* Spațiu sub sub-listă */
+        }
+
+        .video-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .video-container iframe {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test MPU Alcool</h1>
+        <div class="button-container">
+            <button id="intrebare">De ce veniți la MPU? De ce sunteți astăzi aici?</button>
+        </div>
+        <div class="raspuns-container"></div>
+        <ul id="raspunsuri" style="display:none;">
+            <li>
+                <b>Sunt aici la MPU pentru că:</b>
+                <ul>
+                    <li>Am condus sub influența alcoolului.</li>
+                    <li>Nu am respectat legea.</li>
+                    <li>Am făcut un accident.</li>
+                    <li>Am fost un egoist.</li>
+                    <li>Am fost un pericol pentru mine și pentru alții.</li>
+                </ul>
+                <b>Mi-am dat seama că:</b>
+                <ul>
+                    <li>Am o problemă cu alcoolul.</li>
+                    <li>Am fost în abuz de alcool.</li>
+                    <li>Am încetat să beau.</li>
+                </ul>
+                <b>Astăzi vreau să vă arăt că:</b>
+                <ul>
+                    <li>M-am schimbat.</li>
+                    <li>Acum sunt capabil să conduc responsabil.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="video-container" style="display: none;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BKpv7SHJneE?si=s5bwzsqBPZbjIexr"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <script>
+        document.getElementById('intrebare').addEventListener('click', function () {
+            var raspunsuri = document.getElementById('raspunsuri');
+            var videoContainer = document.querySelector('.video-container');
+            if (raspunsuri.style.display === 'none') {
+                raspunsuri.style.display = 'block';
+                videoContainer.style.display = 'flex';
+            } else {
+                raspunsuri.style.display = 'none';
+                videoContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
